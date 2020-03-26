@@ -1,5 +1,5 @@
 # Bulma-notifications
-Pure Javascript and CSS notifications library themed with Bulma css framework.
+Pure <b>Javascript</b> and <b>CSS<b/> notifications library themed with <b>Bulma css</b> framework.
 <br/>
 <img src="b-notifs_preview.png"/>
 <br/>
