@@ -5,4 +5,4 @@ Pure <b>Javascript</b> and <b>CSS</b> notifications library themed with <b>Bulma
   <img src="b-notifs_preview.png"/>
 </p>
 <br/>
-<b>Bulma</b> notifications documentation : https://bulma.io/documentation/elements/notification/
+<b>Bulma css</b> notifications documentation : https://bulma.io/documentation/elements/notification/
