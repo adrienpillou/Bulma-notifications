@@ -1,6 +1,6 @@
 # Bulma-notifications
 Pure <b>Javascript</b> and <b>CSS</b> notifications library themed with <b>Bulma css</b> framework.
-If you're using the great Bulma framework and want interactable and reusable notifications for your website, web app or other project, Bulma-notifications is just what you need !
+If you're using the great Bulma framework and want interactable and reusable notifications for your website or web app, Bulma-notifications is just what you need !
 <br/>
  <p align="center">
   <img src="b-notifs_preview.png"/>
