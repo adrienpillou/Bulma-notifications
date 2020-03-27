@@ -14,7 +14,7 @@ Pure <b>Javascript</b> and <b>CSS</b> notifications library themed with <b>Bulma
 <b><i>import BulmaNotification from './bulma-notifications.js';</i></b><br/><br/>
 -Create a notification instance :<br/>
 <b><i>notif = new BulmaNotification();</i></b><br/><br/>
--Finally, call this method:<br/>
+-Finally, call this method with your instance :<br/>
 <b><i>notif.show(title, message, context, duration);</i></b><br/>
 <i>title</i> : the notification title.<br/>
 <i>message</i> : the notification message.<br/>
