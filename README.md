@@ -18,7 +18,7 @@ Pure <b>Javascript</b> and <b>CSS</b> notifications library themed with <b>Bulma
 <b><i>notif.show(title, message, context, duration);</i></b><br/>
 <i>title</i> : the notification title.<br/>
 <i>message</i> : the notification message.<br/>
-<i>context</i> : the notification theme relative to the desired context.<br/>
+<i>context</i> : the notification theme relative to the desired context (primary, info, warning, danger).<br/>
 <i>duration</i> : the notification visibility duration (ms). If you want to disable this duration, just put -1.<br/>
 
 <b>Bulma css</b> notifications documentation : https://bulma.io/documentation/elements/notification/
