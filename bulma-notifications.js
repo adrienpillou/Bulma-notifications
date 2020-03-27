@@ -60,7 +60,7 @@ export default class BulmaNotification{
       // Default duration delay
       if(duration == undefined)
         duration=1500;
-      else if(duration<=0){
+      else if(duration<=0 && duration !=-1){
         console.error('Bulma-notifications : the duration parameter value is not valid.'+"\n"+
         'Make sure this value is strictly greater than 0.');
       }else if(duration!=-1){
