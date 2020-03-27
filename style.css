@@ -6,19 +6,19 @@
     width:50%;
     margin:16px auto;
     padding: .5em 2em;
-    top:0px;
+    top:-100px;
     left:0;
     right:0;
     position:fixed;
-    transition: opacity 0.33s, top 0.33s, visibility 0.33s;
-    transition-timing-function: ease-out;
+    transition: opacity 0.2s, top 0.2s, visibility 0.2s;
+    transition-timing-function: ease-in;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .note-visible{
-    top:20px;
+    top:0px;
     opacity: 1;
     visibility: visible;
 }

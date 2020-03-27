@@ -1,78 +1,76 @@
-// Initialize the notification structure
-document.addEventListener("DOMContentLoaded", () => Note.init());
+export default class BulmaNotification{
+  constructor(){
+    // Create DOM notification structure when instantiated
+    this.init();
+  }
 
-// Creating the notification
-Note = {
-    init() {
-      this.hideTimeout = null;
+  init(){
+    this.hideTimeout = null;
 
-      // Creating the notification container div
-      this.container = document.createElement("div");
-      this.container.className = "notification note";
+    // Creating the notification container div
+    this.containerNode = document.createElement("div");
+    this.containerNode.className = "notification note";
 
-      // Adding the notification title node
-      this.title = document.createElement('p');
-      this.title.className = "note-title";
-      
-      // Adding the notification message content node
-      this.message = document.createElement('p');
-      this.message.className = "note-content";
-      
-      // Adding a little button on the notification
-      this.closeButton = document.createElement('button');
-      this.closeButton.className = "delete";
-      this.closeButton.addEventListener('click', closeNotification);
-      
-      // Appending the container with all the elements newly created
-      this.container.appendChild(this.closeButton);
-      this.container.appendChild(this.title);
-      this.container.appendChild(this.message);
+    // Adding the notification title node
+    this.titleNode = document.createElement('p');
+    this.titleNode.className = "note-title";
+    
+    // Adding the notification message content node
+    this.messageNode = document.createElement('p');
+    this.messageNode.className = "note-content";
+    
+    // Adding a little button on the notification
+    this.closeButtonNode = document.createElement('button');
+    this.closeButtonNode.className = "delete";
+    this.closeButtonNode.addEventListener('click', () => {
+      this.close();
+    });
+    
+    // Appending the container with all the elements newly created
+    this.containerNode.appendChild(this.closeButtonNode);
+    this.containerNode.appendChild(this.titleNode);
+    this.containerNode.appendChild(this.messageNode);
 
-      // Inserting the notification to the page body
-      document.body.appendChild(this.container);
-    },
+    // Inserting the notification to the page body
+    document.body.appendChild(this.containerNode);
+  }
 
-    // Showing the notification with given parameters
-    show(title, message, state, delay) {
-      clearTimeout(this.hideTimeout);
-      this.container.classList.add("note-visible");
+  // Make the notification visible on the screen
+  show(title, message, context, duration){
+    clearTimeout(this.hideTimeout);
+      this.containerNode.classList.add("note-visible");
 
       // Setting a title to the notification
       if(title!=undefined)
-        this.title.textContent = title;
+        this.titleNode.textContent = title;
       else
-        this.title.textContent = "Notification Title"
+        this.titleNode.textContent = "Notification Title"
 
       // Setting a message to the notification
       if(message!=undefined)
-        this.message.textContent = message;
+        this.messageNode.textContent = message;
 
-      // Applying BULMA notification style/theme
-      if (state) {
-        this.container.classList.add(`is-${state}`);
+      // Applying Bulma notification style/theme
+      if (context) {
+        this.containerNode.classList.add(`is-${context}`);
       }else{
-        this.container.classList.add('is-info');
+        this.containerNode.classList.add('is-info');
       }
 
-      // Default delay
-      if(delay==undefined)
-        delay=1500;
+      // Default duration delay
+      if(duration == undefined)
+        duration=1500;
 
       // Waiting a given amout of time  
-      if(delay!=-1){
+      if(duration!=-1){
         this.hideTimeout = setTimeout(() => {
-          this.container.classList.remove("note-visible");
-        }, delay);
+          this.close();
+        }, duration);
       }
-    }
-};
+  }
 
-// Display a notification
-function showNotification(){
-    Note.show("Notification Title","Created with Bulma-notifications.js","primary",-1);
-}
-
-// Close/hide the notification
-function closeNotification(){
-  Note.container.classList.remove("note-visible");
+  // Hide notification
+  close(){
+    this.containerNode.classList.remove("note-visible");
+  }
 }
